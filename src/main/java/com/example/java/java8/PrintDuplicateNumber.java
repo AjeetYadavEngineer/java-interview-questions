@@ -32,6 +32,12 @@ public class PrintDuplicateNumber {
 
         map.forEach((key, value) -> System.out.println(key + "->" + value));
 
+        //find duplicate words
+        List<String> words = Arrays.asList("java", "python", "java", "c++", "python", "ruby");
+        Set<String> wordSet = new HashSet<>();
+        Set<String> duplicateWords = words.stream().filter(word -> !wordSet.add(word))
+                .collect(Collectors.toSet());
+        System.out.println(duplicateWords);
 
     }
 }
